@@ -1,0 +1,8 @@
+FROM atlassian/bamboo-agent-base
+USER root
+
+RUN echo "Starting Bamboo Agent"
+RUN java -jar ./atlassian-bamboo-agent-installer-7.1.2.jar http://192.168.56.107:8085/agentServer/ install
+CMD [""]
+
+

@@ -1,0 +1,8 @@
+FROM atlassian/bamboo-server
+USER root
+COPY /sonar-scanner-cli-4.5.0.2216-linux /opt/sonar-scanner
+ENV PATH "$PATH:/opt/sonar-scanner/bin:/opt/java/openjdk/bin"
+COPY mysql-connector-java-5.1.49-bin.jar /opt/atlassian/bamboo/lib
+RUN apt-get update 
+RUN apt-get -y install build-essential
+RUN apt-get -y install nodejs
